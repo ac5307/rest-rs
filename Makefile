@@ -5,11 +5,11 @@ FLAGS      := --release -q
 # the server binary
 PROG       := server
 
-C          =
+C           =
 ifeq ($(C),1)
-	CHECK    = -- --check
+	CHECK   = -- --check
 else
-	CHECK    =
+	CHECK   =
 endif
 
 .SILENT:

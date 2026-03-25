@@ -22,14 +22,14 @@ use db::utils::Utils;
 
 /// A type alias for an owned fixed-size immutable string.
 ///
-/// *Only used for the memory-efficiency, because the [String] type
-///  uses more memory.*
+/// This allocates about 2/3 of the memory that the [String] type
+/// normally uses. Capacity is not tracked and no wasted space.
 type Str = Box<str>;
 
 /// A type alias for an owned fixed-size immutable array/list.
 ///
-/// *Only used for the memory-efficiency, because the [Vec] type
-///  uses more memory.*
+/// This allocates about 2/3 of the memory the  the [Vec] type
+/// normally uses. Capacity is not tracked and no wasted space.
 type Arr<T> = Box<[T]>;
 
 /// Unify all of the URIs.
