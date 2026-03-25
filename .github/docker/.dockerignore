@@ -1,0 +1,11 @@
+.
+
+# Include:
+!Makefile
+!Dockerfile
+!.github/credentials.yml
+!src/**
+!tests/**
+!Cargo.toml
+!Cargo.lock
+!rustfmt.toml

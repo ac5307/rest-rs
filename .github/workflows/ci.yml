@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  DOCKER: docker compose
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check formatting
+        run: make fmt C=1
+
+      - name: Start services
+        run: |
+          cp -r .github/docker/. .
+          $DOCKER up -d
+
+      - name: Run tests
+        run: $DOCKER exec axum make test
+
+      - name: Clean up
+        run: $DOCKER down

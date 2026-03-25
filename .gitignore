@@ -1,0 +1,6 @@
+target/
+
+**/db.yml
+
+# files with a process id.
+*.pid
