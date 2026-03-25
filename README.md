@@ -1,5 +1,6 @@
 # RESTful Rust CRUD API
 [![CI within Docker](https://github.com/ac5307/rest-rs/actions/workflows/ci.yml/badge.svg)](https://github.com/ac5307/rest-rs/actions/workflows/ci.yml)
+
 A CRUD API built with ** Rust**, **Axum**, **SQLx**, **Postgres**, and a REST architectural style.
 
 ## Tech Stack
