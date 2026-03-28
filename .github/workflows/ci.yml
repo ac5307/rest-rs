@@ -20,9 +20,7 @@ jobs:
         run: make fmt C=1
 
       - name: Start services
-        run: |
-          cp -r .github/docker/. .
-          $DOCKER up -d
+        run: $DOCKER up -d
 
       - name: Run tests
         run: $DOCKER exec axum make test
