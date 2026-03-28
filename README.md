@@ -8,6 +8,7 @@ A CRUD API built with **Rust**, **Axum**, **SQLx**, **Postgres**, and a REST arc
 - **Framework:** [Axum](https://github.com/tokio-rs/axum) (0.8)
 - **SQL Toolkit:** [SQLx](https://github.com/launchbadge/sqlx)
 - **Database:** PostgreSQL
+- **Containerization:** Docker & Docker Compose
 - **CI:** GitHub Actions
 
 ## Installation
