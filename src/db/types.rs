@@ -1,5 +1,6 @@
 //! This file is mainly used in conjunction with ['super::utils'].
 //! The main purpose is to make binding arguments to queries easier.
+//! The other purpose is to define any additional types created with Postgres.
 
 use sqlx::{
   Postgres,
@@ -7,8 +8,8 @@ use sqlx::{
   query::{Query, QueryAs},
 };
 
-/// An enum representing the
-/// accepted input arguments.
+/// An enum representing the accepted argument
+/// types for binding to SQL prepared statements.
 pub(super) enum DbType<'t> {
   Int(i32),
   Float(f32),
@@ -66,19 +67,19 @@ where
   qry // return the final query
 }
 
-impl<'t> From<i32> for DbType<'t> {
+impl From<i32> for DbType<'_> {
   fn from(val: i32) -> Self {
     DbType::Int(val)
   }
 }
 
-impl<'t> From<f32> for DbType<'t> {
+impl From<f32> for DbType<'_> {
   fn from(val: f32) -> Self {
     DbType::Float(val)
   }
 }
 
-impl<'t> From<bool> for DbType<'t> {
+impl From<bool> for DbType<'_> {
   fn from(val: bool) -> Self {
     DbType::Bool(val)
   }

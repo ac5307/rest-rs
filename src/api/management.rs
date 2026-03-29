@@ -19,9 +19,6 @@ async fn rebuild_tables(State(u): State<Utils>) -> Rslt<()> {
 
 async fn version(State(u): State<Utils>) -> Rslt<Json<Str>> {
   use sqlx::query_scalar;
-  // 'query_scalar' gets the first column
-  // and 'fetch_one' gets the first row.
-  // It's a perfect use-case for VERSION().
   let ver = query_scalar("SELECT VERSION()").fetch_one(u.pool()).await?;
   Ok(Json(ver))
 }

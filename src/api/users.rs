@@ -31,7 +31,7 @@ async fn create(
 ) -> Rslt<(StatusCode, Json<User>)> {
   User::create(&u, &pl.name, &pl.email, &pl.phone)
     .await
-    .map(|u| (StatusCode::CREATED, Json(u)))
+    .map(|user| (StatusCode::CREATED, Json(user)))
 }
 
 /// GET request for a single user.
@@ -56,6 +56,7 @@ async fn update(
     .map(Json)
 }
 
+/// DELETE request for a single user.
 async fn remove(
   State(u): State<Utils>,
   Path(id): Path<i32>,

@@ -1,4 +1,4 @@
-FROM rust:latest
+FROM rust:latest-slim
 WORKDIR /app
 COPY . .
 COPY .github/credentials.yml config/db.yml

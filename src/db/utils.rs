@@ -6,7 +6,7 @@ use sqlx::{
 use std::{fs::read_to_string, path::Path};
 
 use crate::{Str, Arr, Rslt, Serialize, Deserialize};
-use super::types::*;
+use super::types::{DbType, bind_qry, bind_qry_as};
 
 /// The database utility.
 #[derive(Clone)]

@@ -20,16 +20,12 @@ mod db {
 use errors::Rslt;
 use db::utils::Utils;
 
-/// A type alias for an owned fixed-size immutable string.
-///
-/// This allocates about 2/3 of the memory that the [String] type
-/// normally uses. Capacity is not tracked and no wasted space.
+/// A type alias for an owned, immutable, heap-allocated
+/// string slice.
 type Str = Box<str>;
 
-/// A type alias for an owned fixed-size immutable array/list.
-///
-/// This allocates about 2/3 of the memory the  the [Vec] type
-/// normally uses. Capacity is not tracked and no wasted space.
+/// A type alias for an owned, fixed-size, heap-allocated
+/// array/list.
 type Arr<T> = Box<[T]>;
 
 /// Unify all of the URIs.
